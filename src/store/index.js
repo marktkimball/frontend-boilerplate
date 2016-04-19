@@ -5,7 +5,7 @@ import { logger } from '../middleware'
 import rootReducer from '../reducers'
 
 export default function configure(initialState) {
-  const create = window.devToolsExtension
+  const create = window.devToolsExtension && process.env.NODE_ENV !== 'production'
     ? window.devToolsExtension()(createStore)
     : createStore
 

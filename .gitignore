@@ -1,6 +1,5 @@
 .DS_STORE
 node_modules
-static
+dist
 .module-cache
 *.log*
-
