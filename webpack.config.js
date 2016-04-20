@@ -49,7 +49,7 @@ module.exports = {
         ]
       },
       {
-       test: /.(png|jpg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+       test: /.(ico|png|jpg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
        loader: 'url?limit=10000'
      }
     ],
