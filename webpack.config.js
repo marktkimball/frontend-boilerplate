@@ -3,7 +3,7 @@ var webpack = require('webpack')
 var path = require('path')
 
 module.exports = {
-  context: path.join(__dirname, './client'),
+  context: path.join(__dirname, './src'),
   entry: {
     jsx: './index.js',
     html: './index.html',
@@ -17,7 +17,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, './static'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: /client/,
+        include: /src/,
         loaders: [
           'style-loader',
           'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /client/,
+        exclude: /src/,
         loader: 'style!css'
       },
       {
@@ -48,6 +48,10 @@ module.exports = {
           'babel-loader'
         ]
       },
+      {
+       test: /.(png|jpg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+       loader: 'url?limit=10000'
+     }
     ],
   },
   resolve: {
@@ -62,10 +66,14 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
-    })
-  ],
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
+    process.env.NODE_ENV === 'production' && new webpack.optimize.UglifyJsPlugin({
+      compress: {warnings: false},
+      output: {comments: false, semicolons: true}})
+  ].filter(el => !!el),
   devServer: {
-    contentBase: './client',
+    contentBase: './src',
     hot: true
   }
 }
