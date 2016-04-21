@@ -11,7 +11,7 @@ describe('<TodoTextInput />', () => {
     newTodo = 'Here is a new todo being added!',
     placeholder = 'What needs to be done?'
 
-  const newTodoWrapper = shallow(<TodoTextInput editing={false} onSave={handleSave} placeholder={placeholder} newTodo={newTodo} />)
+  const newTodoWrapper = shallow(<TodoTextInput editing={false} onSave={handleSave} placeholder={placeholder} newTodo={true} />)
   const editingTodoWrapper = shallow(<TodoTextInput editing={true} onSave={handleSave} text={text} />)
 
   it('renders', () => {
