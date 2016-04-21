@@ -5,9 +5,16 @@ import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../src/constants/filte
 import expect from 'expect'
 
 describe('<Footer />', () => {
-  const wrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} />)
-  const oneItemWrapper = shallow(<Footer completeCount={1} activeCount={1} filter={SHOW_ACTIVE} />)
-  const noItemWrapper = shallow(<Footer completeCount={0} activeCount={0} filter={SHOW_COMPLETED} />)
+  let onClearCompleted = () => {
+    return true
+  }
+  let onShow = () => {
+    return true
+  }
+
+  const wrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} onClearCompleted={onClearCompleted} onShow={onShow} />)
+  const oneItemWrapper = shallow(<Footer completedCount={1} activeCount={1} filter={SHOW_ACTIVE} onClearCompleted={onClearCompleted} onShow={onShow} />)
+  const noItemWrapper = shallow(<Footer completedCount={0} activeCount={0} filter={SHOW_COMPLETED} onClearCompleted={onClearCompleted} onShow={onShow} />)
 
   it('renders', () => {
     expect(wrapper).toExist
@@ -63,7 +70,7 @@ describe('<Footer />', () => {
 
   it('handles onClick events on filter links', () => {
     const onClickSpy = expect.createSpy()
-    const onClickWrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} onShow={onClickSpy} />)
+    const onClickWrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} onShow={onClickSpy} onClearCompleted={onClearCompleted} />)
 
     expect(onClickSpy.calls.length).toBe(0)
     onClickWrapper.find('ul').childAt(1).childAt(0).simulate('click')
@@ -82,7 +89,7 @@ describe('<Footer />', () => {
 
   it('handles onClick events on button', () => {
     const onClickSpy = expect.createSpy()
-    const onClickWrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} onClearCompleted={onClickSpy} />)
+    const onClickWrapper = shallow(<Footer completedCount={3} activeCount={21} filter={SHOW_ALL} onClearCompleted={onClickSpy} onShow={onShow} />)
 
     expect(onClickSpy.calls.length).toBe(0)
     onClickWrapper.find('button').simulate('click')

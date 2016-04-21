@@ -56,6 +56,12 @@ describe('<MainSection />', () => {
     const onChangeActions = {
       completeAll: () => {
         return true
+      },
+      deleteTodo: () => {
+        return false
+      },
+      completeTodo: () => {
+        return true
       }
     }
     const onChangeSpy = expect.spyOn(onChangeActions, 'completeAll')
