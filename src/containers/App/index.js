@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet';
@@ -22,6 +22,11 @@ class App extends Component {
       </div>
     )
   }
+}
+
+App.propTypes = {
+  todos: PropTypes.array,
+  actions: PropTypes.objectOf(PropTypes.func).isRequired
 }
 
 function mapStateToProps(state) {
