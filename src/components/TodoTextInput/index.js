@@ -1,34 +1,34 @@
 
-import React, { Component, PropTypes } from 'react'
-import classnames from 'classnames'
-import style from './style.css'
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import style from './style.css';
 
 class TodoTextInput extends Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
     this.state = {
       text: this.props.text || ''
-    }
+    };
   }
 
   handleSubmit(e) {
-    const text = e.target.value.trim()
+    const text = e.target.value.trim();
     if (e.which === 13) {
-      this.props.onSave(text)
+      this.props.onSave(text);
       if (this.props.newTodo) {
-        this.setState({ text: '' })
+        this.setState({ text: '' });
       }
     }
   }
 
   handleChange(e) {
-    this.setState({ text: e.target.value })
+    this.setState({ text: e.target.value });
   }
 
   handleBlur(e) {
-    const text = e.target.value.trim()
+    const text = e.target.value.trim();
     if (!this.props.newTodo) {
-      this.props.onSave(text)
+      this.props.onSave(text);
     }
   }
 
@@ -36,7 +36,7 @@ class TodoTextInput extends Component {
     const classes = classnames({
       [style.edit]: this.props.editing,
       [style.new]: this.props.newTodo
-    }, style.normal)
+    }, style.normal);
 
     return (
       <input className={classes}
@@ -47,7 +47,7 @@ class TodoTextInput extends Component {
         onBlur={::this.handleBlur}
         onChange={::this.handleChange}
         onKeyDown={::this.handleSubmit} />
-    )
+    );
   }
 }
 
@@ -57,6 +57,6 @@ TodoTextInput.propTypes = {
   placeholder: PropTypes.string,
   text: PropTypes.string,
   editing: PropTypes.bool
-}
+};
 
-export default TodoTextInput
+export default TodoTextInput;
