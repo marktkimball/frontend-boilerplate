@@ -4,19 +4,20 @@ reject_regex: ^Rejected
 reset_on_push: true
 author_approval: ignored
 reviewers:
-  members:
-    - webbushka
-    - AllanJohnson01
-    - Benxamin
-    - bral
-    - geekingreen
-    - kirstenmalin
-    - marktkimball
-    - ndnhat
-    - osha90
-    - ryoia
-    - trevorlinton
-    - atracy
-    - berrynorth
+  -
     name: default
     required: 1
+    members:
+      - webbushka
+      - AllanJohnson01
+      - Benxamin
+      - bral
+      - geekingreen
+      - kirstenmalin
+      - marktkimball
+      - ndnhat
+      - osha90
+      - ryoia
+      - trevorlinton
+      - atracy
+      - berrynorth
