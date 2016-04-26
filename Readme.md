@@ -50,6 +50,10 @@ This boilerplate contains an example TODO application to demonstrate how to crea
 $ git checkout todo
 ```
 
-# License
+## License
 
 MIT
+
+## Credit
+
+Forked from [@TJ](https://github.com/tj)'s [frontend-boilerplate](https://github.com/tj/frontend-boilerplate).
