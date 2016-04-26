@@ -16,7 +16,7 @@ Because you shouldn't have to repeat yourself.  Start your app, **FAST**.
 - [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [Enzyme](http://airbnb.io/enzyme/)
-- Redux effects (to come)
+- [Redux effects](https://github.com/redux-effects/redux-effects) (to come)
 
 ## Setup
 
