@@ -1,22 +1,22 @@
 
-# Frontend Boilerplate
+# Front-End Boilerplate
 
-A boilerplate of things that mostly shouldn't exist.
+Because you shouldn't have to repeat yourself.  Start your app, **FAST**.
 
-## Contains
+## Package Highlights
 
-- [x] [Webpack](https://webpack.github.io)
-- [x] [React](https://facebook.github.io/react/)
-- [x] [Redux](https://github.com/reactjs/redux)
-- [x] [Babel](https://babeljs.io/)
-- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [x] [PostCSS](https://github.com/postcss/postcss)
-- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
-- [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
-- [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
-- [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- [ ] Redux effects
-- [x] TodoMVC example
+- [React](https://facebook.github.io/react/)
+- [Redux](https://github.com/reactjs/redux)
+- [Babel](https://babeljs.io/)
+- [Webpack](https://webpack.github.io)
+- [PostCSS](https://github.com/postcss/postcss)
+- [CSS Modules](https://github.com/outpunk/postcss-modules)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Rucksack](http://simplaio.github.io/rucksack/docs)
+- [React Router Redux](https://github.com/reactjs/react-router-redux)
+- [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
+- [Enzyme](http://airbnb.io/enzyme/)
+- Redux effects (to come)
 
 ## Setup
 
@@ -24,16 +24,30 @@ A boilerplate of things that mostly shouldn't exist.
 $ npm install
 ```
 
-## Running
+## Run
 
 ```
 $ npm start
+```
+
+## Test
+
+```
+$ npm test
 ```
 
 ## Build
 
 ```
 $ npm run build
+```
+
+# TODO App example
+
+This boilerplate contains an example TODO application to demonstrate how to create React components and containers, Redux actions and reducers, and tests.  To view the TODO branch:
+
+```
+$ git checkout todo
 ```
 
 # License
