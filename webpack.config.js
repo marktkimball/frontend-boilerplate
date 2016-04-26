@@ -1,6 +1,6 @@
-var rucksack = require('rucksack-css')
-var webpack = require('webpack')
-var path = require('path')
+var rucksack = require('rucksack-css');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   context: path.join(__dirname, './src'),
@@ -50,9 +50,9 @@ module.exports = {
         ]
       },
       {
-       test: /.(ico|png|jpg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-       loader: 'url?limit=10000'
-     }
+        test: /.(ico|png|jpg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+        loader: 'url?limit=10000'
+      }
     ],
   },
   resolve: {
@@ -77,4 +77,4 @@ module.exports = {
     contentBase: './src',
     hot: true
   }
-}
+};
