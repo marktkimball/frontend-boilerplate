@@ -1,0 +1,24 @@
+machine:
+  node:
+    version: 5.10.1
+  environment:
+    NODE_ENV: test
+
+test:
+  override:
+    - npm run lint
+    - npm test
+
+dependencies:
+  cache_directories:
+    - "~/.npm"
+
+# deployment:
+#   stage:
+#     branch: stage
+#     heroku:
+#       appname: oc-falkor-web-stage
+#   production:
+#     branch: master
+#     heroku:
+#       appname: oc-falkor-web-prod
